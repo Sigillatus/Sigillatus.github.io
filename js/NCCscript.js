@@ -1,5 +1,5 @@
 /*  NCCscript.js  JavaScript file - Scriptus Web Design
-© 2014 Scott Stringer for North Canterbury Chess www.northcanterburychess.com */
+© 2014 Scott Stringer for North Canterbury Chess www.northcanterburychess.nz */
 
 // Script to insert day & date
 
