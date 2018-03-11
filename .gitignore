@@ -265,3 +265,6 @@ __pycache__/
 
 # ignore sln
 2014 Website.sln
+
+# ignore more config files
+/.vs/
