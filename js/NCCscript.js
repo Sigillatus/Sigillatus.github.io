@@ -38,7 +38,7 @@
 			}
 	}
     // disable after last December meeting until Jan 1st of next year.
-	//window.onload=hiliteNextNight;
+	window.onload=hiliteNextNight;
 
 // end
 
