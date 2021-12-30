@@ -32,7 +32,7 @@ function hiliteNextNight() {
     for (i = 1; i < nRows; i++) {
         var tmp = nTable.rows[i].cells[0].innerHTML;
         tmp = tmp.split(" ");
-        if (tmp[1] == months[now.getMonth()]) {
+        if (tmp[1] == months[now.getMonth()] && tmp[2] == now.getFullYear() ) {
             nTable.rows[i].style.backgroundColor = 'yellow';
         }
     }
