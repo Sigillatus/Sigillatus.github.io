@@ -1,478 +1,603 @@
-﻿@charset "UTF-8";     /* define the character encoding early */
-
-/* CSS Stylesheet for North Canterbury Chess | www.northcanterburychess.nz
-    Heights in em's  ( therefore scaleable with font)
-    Widths in %
-    Typography in em's
------------------------------------------------------------------------------ */
-
-/************************************************************************************
-RESET
-*************************************************************************************/
-html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
-dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
-a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
-strong, sub, sup, tt, var, legend, fieldset {
-	margin: 0;
-	padding: 0;
+/* General Styles */    
+html, body {
+    box-sizing: border-box;
 }
-
-/* set image max width to 100% */
-img {
-	max-width: 100%;
-	height: auto;
-  border: 0;
-}
-
-/* set html5 elements to block */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, pre {
-    display: block;
-}
-
-/************************************************************************************
-GENERAL STYLING
-*************************************************************************************/
 body {
-/*	font: .81em/150% Futura, Trebuchet MS, Arial, sans-serif; */
-
-  font: 0.81em/150% "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	color: #666;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-a {
-	color: #026acb;
-	text-decoration: none;
-	outline: none;
+header {
+    background: linear-gradient(to right, #007bff, #66a3ff);
+    color: white;
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-a:hover {
-	text-decoration: underline;
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-p {
-	margin: 0 0 1.2em;
-	padding: 0;
+.header-logo {
+    height: 60px;
+    width: auto;
 }
 
-/* lists */
-ul, ol {
-	margin: 1em 0 1.4em 1.5em;
-	padding: 0;
-	line-height: 140%;
-}
-li {
-	margin: 0 0 .5em 0;
-	padding: 0;
-    list-style: none;
-}
-
-/* headings */
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1.4em;
-	margin: 0.85em 0 0.4em;
-	color: #000;
-}
-h1 {
-	font-size: 2em;
-}
-h2 {
-	font-size: 1.6em;
-}
-h3 {
-	font-size: 1.4em;
-}
-h4 {
-	font-size: 1.2em;
-}
-h5 {
-	font-size: 1.1em;
-}
-h6 {
-	font-size: 1em;
-}
-
-p {
-	text-indent: 1em;
-}
-
-blockquote  {
-	margin-left: 2.5em;
-    margin-bottom: 1em;
-}
-
-abbr, .help {
-	border-bottom: 1px dotted #333;
-	cursor: help
-}
-
-/* quotes */
-q   {
-    font-size: 0.9em;
-    color: #6A71C9;
-}
-
-attrib  {
+header h1 {
+    margin: 0;
+    font-size: 24px;
     display: inline;
-    font-size: 0.75em;
-    float: right;
-    padding-top: 0.5em;
 }
 
-q:before   {
-    display: inline;
-    font-size: 200%;
-    content: "\201c";
-    line-height: 0.1em;
-    margin-right: 0.125em;
-    vertical-align: -0.4em;
+header h1 a {
+    color: white;
+    text-decoration: none;
 }
 
-q:after   {
-    display: inline;
-    font-size: 200%;
-    content: "\201d";
-    line-height: 0.1em;
-    margin-left: 0.125em;
-    vertical-align: -0.4em;
+header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #eee;
+    align-self: flex-start;
 }
 
-/* make all links to pdf files carry a special image/icon */
-a[href$='.pdf']:after   {
-    content: "\00A0 \00A0 \00A0 \00A0 \00A0"
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9;
+    margin-top: -2em;
 }
 
-a[href$='.pdf'] {
-    background: url(../images/pdf_icon.png) no-repeat center right;
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* Aligns the elements to the right */
+    flex-wrap: wrap;
 }
 
-/* if link contains "mailto" append special image/icon */
-a[href*="mailto"]:after   {
-    content: "\00A0 \00A0 \00A0 \00A0 \00A0 \00A0 \00A0 \00A0 "
-}
-a[href*="mailto"] {
-    background: url(../images/email_icon.png) no-repeat center right;
+nav li {
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
-img.centre {
-    display: block;     /* required to get the centering to work */
-    margin-left: auto;
-    margin-right: auto;
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-/************************************************************************************
-STRUCTURE
-*************************************************************************************/
-body {
-	background: #606060;
-    /* gradient */
-	background: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#606060));
-	background: -moz-linear-gradient(top,  #d3d3d3,  #606060);
-	background: linear-gradient(-90deg, #d3d3d3, #606060);
-/*    background: #666 url(../images/background-main.png) ;
-    background-size: 100% auto; */
+nav a i {
+    margin-right: 8px;
 }
 
-/************************************************************************************
-HEADER
-*************************************************************************************/
-#header {
-	position: relative;
-	height: 12em;
+nav a:hover {
+    color: #e0e0e0;
 }
 
-/* Main Heading */
-#header h1 {
-	position: absolute;
-	top: 0.75em;
-	font: bold 2.25em/100% "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif; ;
-	color: #fff;
-	text-decoration: none;
+/* Layout Styles */
+.main-content {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
-/* Byline or Sub Heading */
-#header h2 {
-	font: italic 1em/130% "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	color: #fff;
-	position: absolute;
-	top: 5em;
+.content-area {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: calc(100% - 240px); /* Account for sidebar width + gap */
 }
 
-#NavIcon    {
-    float: right;
-    margin-top: 4em;
-    margin-right: 2em;
-    display: none;
+.right-sidebar {
+    flex: 0 0 220px;
+    width: 220px;
+    margin: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-/************************************************************************************
-MAIN NAVIGATION
-*************************************************************************************/
-
-#main-nav {
-	width: 100%;
-	background: #ccc;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	/* gradient */
-	background: #6a6a6a url(images/nav-bar-bg.png) repeat-x;
-	background: -webkit-gradient(linear, left top, left bottom, from(#b9b9b9), to(#6a6a6a));
-	background: -moz-linear-gradient(top,  #b9b9b9,  #6a6a6a);
-	background: linear-gradient(-90deg, #b9b9b9, #6a6a6a);
-	/* rounded corner */
-  border-radius: 0.5em;
-	/* box shadow */
-	box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 1px rgba(0,0,0,.7);
-}
-#main-nav li {
-	margin: 0;
-	padding: 0.25em 1em;
-	list-style: none;
-	float: left;
-	position: relative;
-}
-#main-nav li:first-child {
-	margin-left: 0.625em;
-}
-#main-nav a {
-	line-height: 100%;
-	font-weight: bold;
-    font-size: 125%;
-	color: #fff;
-	display: block;
-	padding: 0.875em 0.875em;
-	text-decoration: none;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+/* Ensure tables don't cause overflow */
+.content-area table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#main-nav a:hover {
-	color: #fff;
-	background: #474747;
-	/* gradient */
-	background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#4f4f4f));
-	background: -moz-linear-gradient(top,  #282828,  #4f4f4f);
-	background: linear-gradient(-90deg, #282828, #4f4f4f);
+.main-content h1 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
+.main-content h2 {
+    padding-top: 10px;
+    margin-bottom: 10px;}
 
-
-/************************************************************************************
-CONTENT
-*************************************************************************************/
-#content {
-	background: #fff;
-	margin: 1.25em 0 1.25em;
-	padding: 1.25em 1.25em;
-	width: 600px;
-	float: left;
-	/* rounded corner */
-	border-radius: 0.5em;
-	/* box shadow */
-	box-shadow: 2px 2px 6px rgba(0,0,0,.8);
-    line-height: 145%;
-/*    opacity: 0.75; */
+.main-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-/* post */
-.post {
-	padding-bottom: 0.25em;
+.main-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.bg-ivory   {
-    background: #FFF9E8;
-}
-
-#content article header h1   { font-size: 110%;}
-
-.post-title {
-	margin: 1.25em 0 0.5em 0;
-	padding: 0;
-	font: bold 1.625em/120% "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-/* 	font: bold 1.625em/120% Arial, Helvetica, sans-serif; */
-    line-height: 225%;
-    background: #fff url(../images/post-title-bg.png) repeat-x ; ;
-/*    border-bottom: 1px #6d6d6d dashed; */
-}
-.post-title:before {
-	content: "\00A0 \00A0 \00A0"
-}
-
-.post-meta {
-	margin: 0 0 0.625em;
-	font-size: small;
-}
-
-/* post image */
-.post-image {
-	margin: 0 0 0.9375em;
-}
-
-/* article*/
-article {
-    margin-bottom: 2.5em;
-/*    border-bottom: solid 2px #ddd; */
-}
-
-article:last-of-type   {
-/*    border-bottom: none; */
-}
-
-pre {
-    font-size: 0.9em;
-    width: 94%;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    overflow: auto;  /* turns on scrollbars should they be required */
-}
-
-/************************************************************************************
-Calendar stylng
-*************************************************************************************/
-#calendar    {
-	width: auto;
-    max-width: 800px;
-    background: #dadaff;
-    margin: 0 auto 0.75em;
-    padding: 0.5em 0;
-    border: 0.125em solid #bbb;
-    border-radius: 1em;
-    opacity: 0.95;
-}
-
-#calendar table  {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.9em;
-}
-
-/* first column */
-#calendar table tr > td:first-child {    text-align: right;
-    padding-right: 0.5em;    width: 34%;} 
-
-#calendar table tr:hover {    background: #EDFFA8;}
-
-/* second column */
-#calendar table tr > td:first-child + td {    padding-left: 0.5em;}
-
-.red {
-    color: #F00;
-}
-
-/************************************************************************************
-SIDEBAR
-*************************************************************************************/
-#sidebar {
-	width: 17.5em;
-	float: right;
-	margin: 1.25em 0 1.25em;
-}
-.widget {
-	background: #fff;
-	margin: 0 0 1.875em;
-	padding: 0.625em 1.25em;
-	/* rounded corner */
-	border-radius: 0.5em;
-	/* box shadow */
-	box-shadow: 2px 2px 6px rgba(0,0,0,.8);
-}
-
-.widget_image_results    {
-    background: url(../images/results_icon_32.png) no-repeat top left;
-}
-
-.widget_image_downloads    {
-    background: url(../images/downloads_icon_32.png) no-repeat top left;
-}
-
-.widget_image_contacts    {
-    background: url(../images/contacts_icon_32.png) no-repeat top left;
-}
-
-.widget_image_quotes    {
-/*    background: url(../images/quotes_icon_32.png) no-repeat top left; */
-}
-
-.widget_image_news    {
-    background: url(../images/news_icon_32.png) no-repeat top left;
-}
-
-.mainwidget {
-    max-width: 60%;
-    margin: 1em auto 0 auto;
-}
-
-.widget_image_motto    {
-    background: url(../images/motto_icon_32.png) no-repeat top left;
-}
-
-.widget_image_quicklinks    {
-    background: url(../images/quicklinks_icon_32.png) no-repeat top left;
-}
-
-.widgettitle {
-	margin: 0 0 0.3125em;
-    text-align: center;
-}
-.widget ul {
-	margin: 0;
-	padding: 0;
-}
-.widget li {
-	margin: 0;
-	padding: 0.375em 0;
-	list-style: none;
-	clear: both;
-	border-bottom: solid 1px #eee;
-}
-
-#feedcontent    {font-size: 0.75em;}
-
-/************************************************************************************
-FOOTER
-*************************************************************************************/
 footer {
-	clear: both;
-	color: #ccc;
-	font-size: small;
-    background: #333;
-    padding: 1em;
-    	/* rounded corner */
-	border-radius: 0.5em;
-       	/* box shadow */
-	box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 1px 1px rgba(0,0,0,.9);
-
     text-align: center;
-}
-footer a {
-	color: #fff;
-}
-
-.nomobile, .nofacebook, .notwitter  {
- 	position: relative;
-    z-index: 10;
-    float: right;
-    width: 48px;        /* hard coded size */
-    height: 48px;       /* hard coded size */
+    padding: 20px 0;
+    background-color: #e0e0e0;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
 }
 
-.nomobile {
-    background: url(../images/nomobile.png) no-repeat;
+/* Calendar Styles */
+.calendar-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; 
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.nofacebook {
-    background: url(../images/nofacebook.png) no-repeat;
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: #fff;
 }
 
-.notwitter {
-    background: url(../images/notwitter.png) no-repeat;
+.calendar-header h2 {
+    margin: 0;
+    font-size: 20px;
 }
 
-/************************************************************************************
-CLEARFIX
-*************************************************************************************/
-.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-.clearfix { display: inline-block; }
-.clearfix { display: block; }
+.calendar-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-control-button {
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-control-button:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.calendar th,
+.calendar td {
+    width: 14.28%; /* 100% / 7 days */
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.calendar thead th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.calendar tbody td {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calendar .event-day {
+    background-color: #ffeeba;
+}
+
+.calendar .event-day:hover {
+    background-color: #ffde6b;
+}
+
+.calendar .weekend {
+    background-color: #f0f0f0;
+}
+
+.calendar .today {
+    border: 2px solid #90ee90;
+}
+
+/* Event Pop-up Styles */
+.event-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.event-popup-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.event-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.event-popup-close:hover {
+    background: #ccc;
+}
+
+.event-popup-date {
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Image Styles */
+.chess-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    width: 38%; /* Adjust as needed */
+}
+
+.caption {
+    text-align: left;
+    font-size: 0.875em;  /* Changed from 0.5em to be more proportional */
+    color: #666;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: bottom;  /* Changed from bottom to middle */
+    width: 48%;
+    margin-left: 2%;
+    padding-top: 0;  /* Removed top padding */
+}
+
+/* Sidebar Styles */
+.right-sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.right-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-sidebar li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.right-sidebar li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.right-sidebar a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.right-sidebar a:hover {
+    color: #0056b3;
+}
+
+/* Article Styles */
+.article {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    scroll-margin-top: 70px; /* Add offset for sticky header */
+}
+
+.article h3 {
+    padding-top: 60px;
+    margin-top: -40px;  /* Offset for sticky header scroll */
+}
+
+/* Add offset for any element with ID that might be linked to */
+[id] {
+    scroll-margin-top: 70px;
+}
+
+.article h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.article p {
+    line-height: 1.7;
+    color: #555;
+    font-size: 18px;
+}
+.article .post-date {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.article em {
+    color: #e74c3c;
+}
+
+.article strong {
+    color: #3498db;
+}
+
+.article pre {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    overflow-x: auto;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Feed Styles */
+.feed-item {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.feed-item a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.feed-item a:hover {
+    color: #007bff;
+}
+
+.feed-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Results Table Styles */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.results-table th,
+.results-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.results-table tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ratings Table Styles */
+.content-area table th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.content-area table td {
+    padding: 16px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.content-area table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.content-area table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect that works with colored backgrounds */
+}
+
+.content-area table tr.junior {
+    color: #2c3e50;
+    background-color: #e8f5e9; /* Light green background */
+}
+
+.content-area table tr.senior {
+    color: #7f8c8d;
+    background-color: #f3e5f5; /* Light purple background */
+}
+
+.content-area table tr.adult {
+    color: #34495e;
+}
+
+.ratings-table th:nth-child(1) { /* NZCF# column */
+    width: 6%;
+}
+
+.ratings-table th:nth-child(2) { /* Name column */
+    width: 26%;
+}
+
+.ratings-table th:nth-child(3) { /* Membership column */
+    width: 20%;
+}
+
+.ratings-table th:nth-child(4), 
+.ratings-table th:nth-child(5) { /* Standard and Blitz columns */
+    width: 24%;
+}
+
+.ratings-table td, .ratings-table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 769px) {
+    .main-content {
+        margin: 20px auto;
+    }
+    .right-sidebar {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header h1{
+        font-size: 20px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    .main-content {
+        padding: 15px;
+        flex-direction: column;
+    }
+     .content h1{
+        font-size: 24px;
+    }
+    .content p{
+        font-size: 16px;
+    }
+    .calendar-container {
+        max-width: 100%;
+    }
+    .right-sidebar {
+        margin-top: 20px;
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
