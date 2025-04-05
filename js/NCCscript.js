@@ -1,48 +1,9 @@
 /*  NCCscript.js  JavaScript file - Scriptus Web Design
-© 2014 Scott Stringer for North Canterbury Chess www.northcanterburychess.nz */
+ï¿½ 2014 Scott Stringer for North Canterbury Chess www.northcanterburychess.nz */
 
-// Script to insert day & date
-
-// Get today's current date.
-var now = new Date();
-
-// Array list of days.
-var days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-
-// Array list of months.
-var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-
-// Calculate the number of the current day in the week.
-var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
-
-// Join it all together
-today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + " " + now.getFullYear();
-
-//  End 
 
 // quote counter
 var invoke_index = true;
-
-
-// highlight this month in club calendar
-function hiliteNextNight() {
-
-    var nTable = document.getElementById('dates_table');
-    nRows = nTable.rows.length;
-    for (i = 1; i < nRows; i++) {
-        var tmp = nTable.rows[i].cells[0].innerHTML;
-        tmp = tmp.split(" ");
-        if (tmp[1] == months[now.getMonth()] && tmp[2] == now.getFullYear() ) {
-            nTable.rows[i].style.backgroundColor = 'yellow';
-        }
-    }
-}
-// disable after last December meeting until Jan 1st of next year.
-window.onload = hiliteNextNight;
-
-// end
-
-
 
 // Script to randomly show Quote of the Day
 function Show_Quote() {
@@ -162,12 +123,74 @@ function Show_Quote() {
 // End
 
 
-// showhide by element - used for mobile navigation+ icon
 
-function ShowHideContent(elem, contentId) {
-    var con = document.getElementById(contentId);
-    var isHidden = (con.style.display == "none");
-    //    this.innerHTML = (isHidden)?"Hide Content":"Show Content";
-    con.style.display = (isHidden) ? "block" : "none";
-    con = null;
+
+// Script to load the Google Feeds API and display the latest posts from Chessexpress.blogspot.co.nz
+// This script is loaded from the Google API server and will not work on a local file system
+
+    //google.load("feeds", "1");
+
+    function initialize() {
+        var feed = new google.feeds.Feed("http://chessexpress.blogspot.com/feeds/posts/default", {
+            api_key: 'nfjngcaj1cuat1zdder7bo3a8tabenatyyyz9tdj',
+            count: 6,
+            order_by: 'pubDate',
+            order_dir: 'desc'
+        });
+        feed.load(function (result) {
+            if (!result.error) {
+                var container = document.getElementById("feedcontent");
+                container.innerHTML = "<h4>Chessexpress.blogspot.co.nz</h4>";
+                for (var i = 0; i < result.feed.entries.length; i++) {
+                    var entry = result.feed.entries[i];
+                    var div = document.createElement("div");
+                    //div.appendChild(document.createTextNode(entry.title));
+                    div.innerHTML = '<p><a href="' + entry.link + '" >' + entry.title + '</a> - ' +
+                        text_truncate(entry.content, 120, "&hellip;") +
+                        '<a href="' + entry.link + '" >read more&hellip;</a></p>';
+                    container.appendChild(div);
+                }
+            }
+        });
+    }
+    google.setOnLoadCallback(initialize);
+
+
+    text_truncate = function (str, length, ending) {
+        if (length == null) {
+            length = 100;
+        }
+        if (ending == null) {
+            ending = '...';
+        }
+        if (str.length > length) {
+            return str.substring(0, length - ending.length) + ending;
+        } else {
+            return str;
+        }
+    };
+
+// Function to load and display RSS feeds
+function loadRSSFeed() {
+    const feedURL = "https://lichess.org/blog.rss";
+    const container = document.getElementById('feedContent');
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedURL)}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = '';
+            data.items.slice(0, 5).forEach(item => { // Show only first 5 items
+                const date = new Date(item.pubDate).toLocaleDateString();
+                html += `<div class="feed-item">
+                    <a href="${item.link}" target="_blank">${item.title}</a>
+                    <span class="feed-date">${date}</span>
+                </div>`;
+            });
+            container.innerHTML = html;
+        })
+        .catch(error => {
+            container.innerHTML = 'Unable to load chess news...';
+            console.error('Error loading RSS feed:', error);
+        });
 }
+
