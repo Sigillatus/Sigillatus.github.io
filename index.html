@@ -1,516 +1,288 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-    <meta charset="utf-8">
-    <title>NCC | Home</title>
-    <meta name="KEYWORDS" content="North Canterbury chess, NCC, Rangiora chess, Kaiapoi Chess, Waimakariri chess, Canterbury Chess, Aut Vincere Aut Mori">
-    <meta name="DESCRIPTION" content="North Canterbury Chess Website.  North Canterbury Chess is a chess club based in Rangiora, New Zealand and serves the chess community from Christchurch to Kaikoura.">
-    <meta name="ROBOTS" content="ALL">
-    <meta name="AUTHOR" content="Scott Stringer | Scriptus Web Design">
-
-    <!-- disable iPhone inital scale -->
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-    <!-- main css -->
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-
-    <!-- media queries css -->
-    <link href="css/media-queries.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>North Canterbury Chess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/NCCscript.js"></script>
-
 </head>
 
 <body>
 
-    <div id="pagewrap">
+    <header>
+        <div class="header-brand">
+            <img src="images/logo.png" alt="North Canterbury Chess Logo" class="header-logo">
+            <h1><a href="http://northcanterburychess.nz/">North Canterbury Chess</a></h1>
+        </div>
+        <h4>Supporting chess in North Canterbury, New Zealand</h4>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="results.html"><i class="fas fa-trophy"></i> Results</a></li>
+                <li><a href="ratings.html"><i class="fas fa-chart-line"></i> Ratings</a></li>
+                <li><a href="about.html#download"><i class="fas fa-download"></i> Downloads</a></li>
+                <li><a href="about.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <header id="header">
-            <!-- header -->
+    <main class="main-content">
+        <div class="content-area">
+            <h1>Quote of the day</h1>
+            <script type="text/javascript">Show_Quote()</script>
+            <h1>Events</h1>
+            <p>NCC normally meets on the first and third Tuesday of each month.</p>
 
-            <h1>North Canterbury Chess</h1>
-            <h2>Promoting the playing of chess in North Canterbury, NZ.</h2>
-
-            <nav>
-                <!-- main-nav -->
-                <ul id="main-nav">
-                    <li><a href="index.html" title="Homepage"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="results.html" title="Find out the latest..."><i class="fas fa-trophy"></i> Results</a></li>
-                    <li><a href="ratings.html" title="Latest ratings"><i class="fas fa-chart-line"></i> Ratings</a></li>
-                    <li><a href="membership.html" title="Information on NCC"><i class="fas fa-users"></i> Membership</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-        <div id="content">
-
-            <h5>
-                <script type="text/javascript">document.write(today)</script>
-            </h5>
-
-
-
-
-            <article class="post clearfix">
-
-                <figure class="post-image">
-                    <img src="images/header.jpg" alt="header image">
-                </figure>
-            </article>
-
-            <article>
-                <header>
-                    <h1 class="post-title">Quote of the day</h1>
-                </header>
-                <section class="widget mainwidget">
-                    <div class="widget_image_quotes">
-                        <br />
-                        <script type="text/javascript">Show_Quote()</script>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h2>April 2025</h2>
+                    <div class="calendar-controls">
+                        <button class="calendar-control-button" id="prev-month">❮</button>
+                        <button class="calendar-control-button" id="next-month">❯</button>
                     </div>
-                </section>
-            </article>
-
-            <article>
-                <header><h1 class="post-title">Calendar of Events</h1><p class="post-meta">Posted 12 Jan 2025</p></header>
-                <div id="calendar">
-                    <table id="dates_table">
-                        <tbody>
-                            <tr><td><strong>2025</strong></td><td><strong>Planned Events</strong></td></tr>
-                            <tr><td><em>7 January 2025</em></td><td><em>No Meeting</em></td></tr>
-                            <tr><td>21 January 2025</td><td>Freeplay</td></tr>
-                            <tr><td>4 February 2025</td><td>Freeplay</td></tr>
-                            <tr><td>18 February 2025</td><td>Club Ladder #1</td></tr>
-                            <tr><td>4 March 2025</td><td>Freeplay</td></tr>
-                            <tr><td>18 March 2025</td><td>Club Ladder #2</td></tr>
-                            <tr><td>1 April 2025</td><td>Freeplay</td></tr>
-                            <tr><td>15 April 2025</td><td><strong>AGM</strong> / Freeplay</td></tr>
-                            <tr><td>6 May 2025</td><td>Freeplay</td></tr>
-                            <tr><td>20 May 2025</td><td>Club Ladder #3</td></tr>
-                            <tr><td>3 June 2025</td><td>Freeplay</td></tr>
-                            <tr><td>17 June 2025</td><td>Club Ladder #4</td></tr>
-                            <tr><td>1 July 2025</td><td>Midwinter Blitz</td></tr>
-                            <tr><td>15 July 2025</td><td>Club Ladder #5</td></tr>
-                            <tr><td>5 August 2025</td><td>Freeplay</td></tr>
-                            <tr><td>19 August 2025</td><td>Club Ladder #6</td></tr>
-                            <!--<tr class="red"><td>26 August 2025</td><td>Junior School Chess Tournament</td></tr>-->
-                            <tr><td>2 September 2025</td><td>Freeplay</td></tr>
-                            <tr><td>16 September 2025</td><td>Junior Tournament / Freeplay</td></tr>
-                            <tr><td>7 October 2025</td><td>Freeplay</td></tr>
-                            <tr><td>21 October 2025</td><td>Freeplay</td></tr>
-                            <tr><td>4 November 2025</td><td>Kings Gambit 1/2</td></tr>
-                            <tr><td>18 November 2025</td><td>Kings Gambit 1/2</td></tr>
-                            <tr><td>2 December 2025</td><td>Freeplay</td></tr>
-                            <tr><td>16 December 2025</td><td>End of Year Blitz</td></tr>
-                            <tr><td><em>6 January 2026</em></td><td><em>No Meeting</em></td></tr>
-                            <tr><td><em>20 January 2026</em></td><td>Freeplay</td></tr>
-                        </tbody>
-                    </table>
                 </div>
-                <p>Usual date sequence is first &amp; third Tuesday of the month.</p>
-            </article>
+                <table class="calendar"></table>
+            </div>
+            <p>Click on the dates to see the events.</p>
 
+            <!-- Event Popup -->
+            <div class="event-popup-backdrop"></div>
+            <div class="event-popup">
+                <button class="event-popup-close">&times;</button>
+                <div class="event-popup-date"></div>
+                <div class="event-popup-content"></div>
+            </div>
 
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">End of Year Blitz 2024</h1>
-                    <p class="post-meta">Posted 31 Dec 2024</p>
-                </header>
+            <h1>Posts</h1>
 
-                <blockquote><h6>Winner &raquo; Akash Patel (9.0/10)</h6></blockquote>
-                <p>Our year ending tournament was the annual End-Of-Year-Blitz. The competition was played as a round robin over 10 rounds. 
+            <article id="article1" class="article">
+                <h2>End of Year Blitz 2024</h2>
+                <p class="post-date">Posted on: 31 Dec 2024</p>
+                <h4>Winner: Akash Patel (9.0/10)</h4>
+                <p>Our year ending tournament was the annual End-Of-Year-Blitz. The competition was played as a round
+                    robin over 10 rounds.
                     Games were played at 5 minutes per player per game.</p>
-                <p>Congratulations to new Club Champion Akash Patel for winning the competition. 
+                <p>Congratulations to new Club Champion Akash Patel for winning the competition.
                     Akash fought off a strong challenge from Bob van den Bergh who took second place.</p>
-                    <p>Both Steve and Simon Barber have converted their provisional Blitz ratings into full Blitz ratings.</p>
-
-                <p>Full Results &raquo;  <a href="results.html#EYBlitz">2024 End of Year Blitz&#8230;</a></p>
+                <p>Both Steve and Simon Barber have converted their provisional Blitz ratings into full Blitz ratings.
+                </p>
+                <p>Full Results &raquo; <a href="results.html#EYBlitz">2024 End of Year Blitz&#8230;</a></p>
             </article>
 
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Club Ladder 2024</h1>
-                    <p class="post-meta">Posted 8 Dec 2024</p>
-                </header>
-                <blockquote>
-                    <p>Ladies &amp; Gentlemen we have a new Club Champion: Akash Patel!</p>
-                    <p>Akash demolished former Champion Scott Stringer in the final played last Tuesday. 
-                        The new Champion showed absolutely no mercy pouncing on any inaccuracies and quickly turned the game into a winning position. 
-                        Scott was forced to resign on move 16.</p>
-                        <p>2023 Champion Tony Kesseller did not defend his title this year.</p>
-                                   </blockquote>
+            <article id="article2" class="article">
+                <h2>Club Ladder 2024</h2>
+                <p class="post-date">Posted on: 8 Dec 2024</p>
+                <h4>Ladies &amp; Gentlemen we have a new Club Champion: Akash Patel!</h4>
+                <p>Akash demolished former Champion Scott Stringer in the final played last Tuesday.
+                    The new Champion showed absolutely no mercy pouncing on any inaccuracies and quickly turned the game
+                    into a winning position.
+                    Scott was forced to resign on move 16.</p>
+                <p>2023 Champion Tony Kesseller did not defend his title this year.</p>
+                <p>Akash's victory in the final means he has now won the Club Ladder for 2024 and is the new Club
+                    Champion.</p>
+                <img src="images/akash.jpg" alt="Akash Patel - Club Champion 2024" class="chess-image">
+                <p class="caption">Akash Patel, winner of both the 2024 Club Championship and End of Year Blitz</p>
 
                 <p>Full Results &raquo; <a href="results.html#NCCChamps">2024 Club Ladder…</a></p>
             </article>
 
-
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">King's Gambit 2024</h1>
-                    <p class="post-meta">Posted 26 Nov 2024</p>
-                </header>
-                <blockquote>
-                    <p>This was an extended competition, played over two consecutive nights.</p>
-                    <p>Bob van den Bergh was the clear winner on a perfect 5/5. He and Akash fought out a difficult and instructive pawn endgame to conclude the final game.</p>
-                </blockquote>
-
+            <article id="article3" class="article">
+                <h2>King's Gambit 2024</h2>
+                <p class="post-date">Posted on: 26 Nov 2024</p>
+                <h4>Winner: Bob van den Bergh (5/5)</h4>
+                <p>
+                <p>This is an extended competition, played over two consecutive nights.</p>
+                <p>Bob van den Bergh was the clear winner on a perfect 5/5. He and Akash fought out a
+                    difficult and instructive pawn endgame to conclude the final game.</p>
                 <p>Full Results &raquo; <a href="results.html#KingGambit">2024 King's Gambit…</a></p>
             </article>
 
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Midwinter Blitz 2024</h1>
-                    <p class="post-meta">Posted 6 July 2024</p>
-                </header>
-
-                <p>10 players competed in this year's Midwinter Blitz competition. Seven rounds were played with games timed at five minutes-per-player-per-game.<br />
-                    Five unrated players earned their first NCC Blitz rating and Dean gained his full Blitz rating</p>
-                    <p>Congratulations to Akash and Bob who shared first place.</p>
-                <blockquote><h6>Champions: Akash Patel &amp; Bob van den Bergh (5.5/7)</h6></blockquote>
-                <p>Final Results&nbsp;&raquo;&nbsp;<a href="results.html#MWBlitz">2024 Mid Winter Blitz…</a></p>
+            <article id="article4" class="article">
+                <h2>Midwinter Blitz 2024</h2>
+                <p class="post-date">Posted on: 6 Jul 2024</p>
+                <h4>Winners: Akash Patel &amp; Bob van den Bergh (5.5/7)</h4>
+                <p>10 players competed in this year's Midwinter Blitz competition.
+                    Seven rounds were played with games timed at five minutes-per-player-per-game.</p>
+                <p>Five unrated players earned their first NCC Blitz rating and Dean gained his full Blitz rating.</p>
+                <p>Congratulations to Akash and Bob who shared first place.</p>
+                <p>Full Results &raquo; <a href="results.html#MWBlitz">2024 Midwinter Blitz...</a></p>
             </article>
-
-
-
-           
-            
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Junior Competition 2018</h1>
-                    <p class="post-meta">Posted 20 Sept 2018</p>
-                </header>
-                <blockquote><h6>Overall winner: Nathan Houghton</h6></blockquote>
-
-                <p>Our 2018 Junior tournament was the same size as last year, wth only four players taking part. The small number didn't dilute the quality of chess played!</p>
-                <p>Defending junior champion Nathan Houghton successfully defended his title.</p>
-                <p>Congratulations Nathan!</p>
-
-                <p>Full results &raquo; <a href="results.html#JuniorComp">2018 Junior Competition&#8230;</a></p>
-            </article>
-
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Junior School Chess Tournament (JSCT)</h1>
-                    <p class="post-meta">Posted 26 Aug 2018</p>
-                </header>
-
-
-                <blockquote><h6>2018 Champions</h6></blockquote>
-                <ul>
-                    <li>West Eyreton Wizards</li>
-                </ul>
-
-                <blockquote><h6>2016 Most Valuable Player</h6></blockquote>
-                <ul>
-                    <li>William Bretherton (West Eyreton Wizards)</li>
-                </ul>
-
-                <blockquote><h4>Team Placings</h4></blockquote>
-                <pre>
-Place Name                   Score
-  1   WEST EYRETON WIZARDS   20   
-  2   ASHGROVE ACES          15   
- 3-4  NORTH LOBURN KNIGHTS   13   
-      LEITHFIELD LEGENDS     13   
-  5   AMBERLEY KNIGHTS       12.5 
-  6   ASHGROVE ARCHERS       10   
- 7-8  WEST EYRETON WARRIORS  8.5  
-      AMBERLEY ROOKS         8.5  
-  9   WEST EYRETON WILD CATS 7.5  
- </pre>
-                <strong><a href="../downloads/JSCT Results 2018.pdf" title="Click to download results" target="_blank">2018 Junior School Tournament - Full Results</a></strong>
-
-            </article>
-
-
-            <!--
-
-        <article class="post clearfix">
-            <header>
-                <h1 class="post-title">Junior School Chess Tournament (JSCT)</h1>
-                <p class="post-meta">Posted 26 August 2018</p>
-            </header>
-
-             <blockquote><h6>Entries for the 2018 Junior School Chess Tournament are OPEN!</h6></blockquote>
-        <h3>Teams entered: morning</h3>
-         <ul>
-           <li>North Loburn Knights</li>
-           <li>Ashgrove Aces</li>
-           <li>Ashgrove Archers</li>
-           <li>Loburn Lions</li>
-           <li>Leithfield Legends</li>
-           <li>Leithfield Lions</li>
-         </ul>
-
-        <h3>Teams entered: afternoon</h3>
-         <ul>
-           <li>West Eyreton Wizards</li>
-           <li>West Eyreton Warriors</li>
-           <li>Amberley Bishops</li>
-           <li>Amberley Aces</li>
-         </ul>
-            <p><a href="JSCT.html" title="Click for more details">Find out more &raquo;</a></p>
-            <p>
-                Download the Entry Form and Information pack here &raquo;<a href="downloads/JSCT 2018.pdf" title="Click to download Entry Form &amp; Information pack">
-                    Entry Form &amp; Info pack&nbsp;&nbsp;&nbsp;&nbsp;
-                </a>
-            </p>
-            </article>
-    -->
-            <!--
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Interclub Match</h1>
-                    <p class="post-meta">Posted 2 Nov 2016</p>
-                </header>
-
-                <p>NCC played Ashburton Chess Club on Sunday 30th October.</p>
-                <p>We played a five round round-robin with a time control of 30/30 (sudden death).</p>
-                <p>We lost the first and last rounds 5:0. So it wasn't to be the result we planned. Ashburton taking an early lead which they never looked close to relinquishing.</p>
-
-                <p><br />Thank you to all who took part.</p>
-
-                <p>Full Results &raquo; <a href="results.html#Interclub">2016 Interclub Match…</a></p>
-            </article>
-
-
-        <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Armstrong Trophy 19/4 and 7/6 2016 - Final Results</h1>
-                    <p class="post-meta">Posted 10 Jun 2016</p>
-                </header>
-                <blockquote><h6>Winner &raquo; Scott Stringer</h6></blockquote>
-                <p>Full Results &raquo; <a href="results.html#Armstrong">2016 Armstrong Trophy results…</a></p>
-            </article>
-    -->
-
-
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Where and when we meet</h1>
-                </header>
-
-                <p>North Canterbury Chess' regular meetings are held on the first and third Tuesday of each month</p>
-                <h4>
-                    7pm - 9.30pm<br>
-                    Rangiora War Memorial Centre<br>
-                    Corner of High Street &amp; Albert Street, Rangiora.
-                </h4>
-
-                <img src="images/map.png" class="centre" alt="location map">
-
-                <p>
-                    Special events and competitions may be held at other
-                    times and venues.&nbsp;&nbsp;See the Calendar above for dates of these
-                    events.
-                </p>
-            </article>
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">Who are North Canterbury Chess?</h1>
-                </header>
-
-                <p>
-                    North Canterbury Chess is a chess club which operates out
-                    of Rangiora, New Zealand.&nbsp;&nbsp;We are run by an elected executive
-                    comprising President, Vice-President and
-                    Secretary/Treasurer with up to two additional untitled
-                    councilors.
-                </p>
-
-                <p>
-                    Our club is a non-profit organization.&nbsp;&nbsp;This
-                    status is detailed in our constitution and is recognised by New
-                    Zealand's sole taxation agency - the Inland Revenue Department.
-                </p>
-                <p>
-                    We formed 12 September 2001, and since 2002 have been
-                    affiliated with the New Zealand Chess Federation (NZCF) the governing
-                    body for chess in New Zealand.
-                </p>
-            </article>
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">What does North Canterbury Chess do?</h1>
-                </header>
-
-                <p>From our constitution…</p>
-                <blockquote>
-                    <i>
-                        2.0 OBJECTS<br>
-                        2.1 To encourage &amp; foster the game of chess, with emphasis in the North Canterbury area.<br>
-                        2.2 To arrange and run matches, tournaments &amp; competitions and other chess events.<br>
-                    </i>
-                </blockquote>
-                <p>We also organize school lectures, tuition, as well as our social &amp; competitive chess events.</p>
-            </article>
-
-            <article class="post clearfix">
-                <header>
-                    <h1 class="post-title">How we operate</h1>
-                </header>
-
-                <p>
-                    We are governed by New Zealand law, our constitution, <abbr title="New Zealand Chess Federation">NZCF</abbr> regulations and <abbr title="International chess governing body">FIDE</abbr>
-                    rules.&nbsp;&nbsp;So long as we don't act outside these
-                    constraints we are free to organize chess (and other) events as we see
-                    fit.
-                </p>
-                <p>We operate a democratic policy toward decision making.</p>
-            </article>
-
-            <div style="clear: both;"></div>
-
         </div>
-        <!-- /#content -->
-
-        <aside id="sidebar">
-
-            <section class="widget">
-                <div class="widget_image_results">
-                    <h4 class="widgettitle">Results</h4>
+        <div class="right-sidebar">
+            <ul>
+                <li>
+                    <h3>Recent Posts</h3>
                     <ul>
-                        <li><a href="results.html#EYBlitz">2024 End of Year Blitz&#8230;</a></li>
-                        <li><a href="results.html#NCCChamps">2024 Club Ladder</a></li>
-                        <li><a href="results.html#KingGambit">2024 King's Gambit&#8230;</a></li>
-                        <li><a href="results.html#MWBlitz">2024 Mid Winter Blitz…</a></li>
-<!--                        <li><a href="results.html#JuniorComp">2018 Junior Competition&#8230;</a></li>
-                        <li><a href="../downloads/JSCT Results 2018.pdf" title="Click to download results" target="_blank">2018 Junior School Tournament - Full Results</a></li> -->
+                        <li><a href="#article1">2024 End of Year Blitz - results</a></li>
+                        <li><a href="#article2">2024 Club Ladder - results</a></li>
+                        <li><a href="#article3">2024 King's Gambit - results</a></li>
+                        <li><a href="#article4">2024 Midwinter Blitz - results</a></li>
                     </ul>
-                </div>
-            </section>
+                </li>
+                <li>
+                    <h3>Chess News &amp; Articles</h3>
+                    <div id="feedContent"></div>
+                </li>
+            </ul>
+        </div>
+    </main>
 
-            <section class="widget">
-                <div class="widget_image_news">
-                    <h4 class="widgettitle">Chess News &amp; Articles</h4>
-                    <div id="feedcontent" class="feed"></div>
-                </div>
-            </section>
+    <footer>
+        <p>&copy; 2025 North Canterbury Chess. All rights reserved.</p>
+    </footer>
 
-            <section class="widget">
-                <div class="widget_image_contacts">
-                    <h4 class="widgettitle">Contacts</h4>
-                    <ul>
-                        <li><a href="mailto:scriptuswebdesign@gmail.com" title="email Scott Stringer">President - Scott Stringer</a></li>
-                        <li><a href="mailto:branniecat@gmail.com " title="email Mark Williams">Secretary/Treasurer  - Mark Williams</a></li>
-                        <li><a href="mailto:danemailhost@gmail.com" title="email Daniel Annear">Vice-President - Daniel Annear</a></li>
-                        <li>&nbsp;</li>
-                        <li><strong>Postal address</strong></li>
-                        <li>
-                            North Canterbury Chess<br>
-                            193 Fishers Road<br>
-                            RD3, Rangiora 7473<br>
-                            New Zealand
-                        </li>
-                    </ul>
-                </div>
-            </section>
+    <script>
+        const calendarContainer = document.querySelector('.calendar-container');
+        const monthHeader = calendarContainer.querySelector('.calendar-header h2');
+        const calendarTable = calendarContainer.querySelector('.calendar');
+        const prevMonthButton = calendarContainer.querySelector('#prev-month');
+        const nextMonthButton = calendarContainer.querySelector('#next-month');
 
-            <section class="widget">
-                <div class="widget_image_downloads">
-                    <h4 class="widgettitle">Downloads</h4>
-                    <ul>
-                        <li><a href="/downloads/NCCMembership%20Application.pdf" target="_blank" title="Download membership form (pdf)">Membership Form</a></li>
-                        <li><a href="/downloads/NCCConstitution.pdf" target="_blank" title="Download NCC Constitution (pdf)">NCC Constitution</a></li>
-                        <li>&nbsp;</li>
-                        <li><a href="/downloads/Basic%20Rules%20of%20Chess.pdf" target="_blank" title="Download the Basic rules of chess (pdf)">Basic Rules of Chess</a></li>
-                        <li><a href="/downloads/ChessNotation.pdf" target="_blank" title="Guide to chess notation (pdf)">Guide to Chess Notation</a></li>
-                        <li><a href="/downloads/Kings%20Gambit%20Primer.pdf" target="_blank" title="Guide to Kings Gambit (pdf)">Kings Gambit Primer</a></li>
-                    </ul>
-                </div>
-            </section>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
 
-            <section class="widget">
-                <div class="widget_image_motto">
-                    <h4 class="widgettitle">NCC Motto</h4>
-                    <h6><i>Aut Vincere Aut Mori</i></h6><p>(Owt wen-KAY-ray  Owt MO-ree)</p>
-                    <p>This Latin saying translates to: "Either conquer or die!"</p>
-                </div>
-            </section>
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+
+        // Array of events
+        const events = [
+            { date: '2025-04-01', title: 'Free play' },
+            { date: '2025-04-15', title: 'AGM / Free play' },
+            { date: '2025-05-06', title: 'Free play' },
+            { date: '2025-05-20', title: 'Club Ladder #3 (of 6)' },
+            { date: '2025-06-03', title: 'Free play' },
+            { date: '2025-06-17', title: 'Club Ladder #4 (of 6)' },
+            { date: '2025-07-01', title: 'Midwinter Blitz' },
+            { date: '2025-07-15', title: 'Club Ladder #5 (of 6)' },
+            { date: '2025-08-05', title: 'Free play' },
+            { date: '2025-08-19', title: 'Club Ladder #6 (of 6)' },
+            { date: '2025-09-02', title: 'Free play (Club Ladder semi-finals)' },
+            { date: '2025-09-16', title: 'Free play (Club Ladder semi-finals)' },
+            { date: '2025-10-07', title: 'Free play (Club Ladder Final)' },
+            { date: '2025-10-21', title: 'Free play (Club Ladder Final)' },
+            { date: '2025-11-04', title: 'Kings Gambit #1 (of 2)' },
+            { date: '2025-11-18', title: 'Kings Gambit #2 (of 2)' },
+            { date: '2025-12-02', title: 'Free play' },
+            { date: '2025-12-16', title: 'End of Year Blitz' },
+            { date: '2026-01-06', title: 'NO MEETING' },
+            { date: '2026-01-20', title: 'Free play' },
+            { date: '2026-02-03', title: 'Free play' }
+        ];
+
+        // Centralize popup handling
+        const popup = {
+            show: (dateStr, events) => {
+                const popup = document.querySelector('.event-popup');
+                const backdrop = document.querySelector('.event-popup-backdrop');
+                const dateEl = popup.querySelector('.event-popup-date');
+                const contentEl = popup.querySelector('.event-popup-content');
+                
+                const formattedDate = new Date(dateStr).toLocaleDateString('en-NZ', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                dateEl.textContent = formattedDate;
+                contentEl.innerHTML = events.map(e => `<p>${e.title}</p>`).join('');
+                
+                popup.style.display = 'block';
+                backdrop.style.display = 'block';
+            },
+            hide: () => {
+                document.querySelector('.event-popup').style.display = 'none';
+                document.querySelector('.event-popup-backdrop').style.display = 'none';
+            }
+        };
+
+        // Add event handlers only once
+        document.querySelector('.event-popup-close')?.addEventListener('click', popup.hide);
+        document.querySelector('.event-popup-backdrop')?.addEventListener('click', popup.hide);
+
+        function createCalendar(month, year, events) {
+            calendarTable.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            `;
+            monthHeader.textContent = `${monthNames[month]} ${year}`;
+
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+            const todayDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
 
-            <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+            let dayCounter = 1;
+            let tableBody = calendarTable.querySelector('tbody');
 
-            <script type="text/javascript">
+            for (let i = 0; i < 6; i++) { // Max 6 rows
+                let row = tableBody.insertRow();
+                for (let j = 0; j < 7; j++) {
+                    if (i === 0 && j < firstDayOfMonth) {
+                        row.insertCell().textContent = '';
+                    } else if (dayCounter <= daysInMonth) {
+                        const cell = row.insertCell();
+                        cell.textContent = dayCounter;
 
-                //google.load("feeds", "1");
-
-                function initialize() {
-                    var feed = new google.feeds.Feed("http://chessexpress.blogspot.com/feeds/posts/default", {
-                        api_key: 'nfjngcaj1cuat1zdder7bo3a8tabenatyyyz9tdj',
-                        count: 6,
-                        order_by: 'pubDate',
-                        order_dir: 'desc'
-                    });
-                    feed.load(function (result) {
-                        if (!result.error) {
-                            var container = document.getElementById("feedcontent");
-                            container.innerHTML = "<h4>Chessexpress.blogspot.co.nz</h4>";
-                            for (var i = 0; i < result.feed.entries.length; i++) {
-                                var entry = result.feed.entries[i];
-                                var div = document.createElement("div");
-                                //div.appendChild(document.createTextNode(entry.title));
-                                div.innerHTML = '<p><a href="' + entry.link + '" >' + entry.title + '</a> - ' +
-                                    text_truncate(entry.content, 120, "&hellip;") +
-                                    '<a href="' + entry.link + '" >read more&hellip;</a></p>';
-                                container.appendChild(div);
-                            }
+                        // Add weekend class
+                        if (j === 0 || j === 6) {
+                            cell.classList.add('weekend');
                         }
-                    });
-                }
-                google.setOnLoadCallback(initialize);
 
-            </script>
+                        // Add events for the current day
+                        const eventDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(dayCounter).padStart(2, '0')}`;
+                        const dayEvents = events.filter(event => event.date === eventDate);
+                        if (dayEvents.length > 0) {
+                            cell.classList.add('event-day');
+                            cell.addEventListener('click', () => popup.show(eventDate, dayEvents));
+                        }
 
-            <script type="text/javascript">
+                        if (eventDate === todayDate) {
+                            cell.classList.add('today');
+                            cell.title = "Today";
+                        }
 
-                text_truncate = function (str, length, ending) {
-                    if (length == null) {
-                        length = 100;
-                    }
-                    if (ending == null) {
-                        ending = '...';
-                    }
-                    if (str.length > length) {
-                        return str.substring(0, length - ending.length) + ending;
+                        dayCounter++;
                     } else {
-                        return str;
+                        row.insertCell().textContent = '';
                     }
-                };
-            </script>
+                }
+                if (dayCounter > daysInMonth) break;
+            }
+        }
 
-        </aside>
-        <!-- /#sidebar -->
+        prevMonthButton.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            createCalendar(currentMonth, currentYear, events);
+        });
 
-        <footer>
-            <span class="nomobile" title="Reponsive design | No mobile site required">&nbsp;</span>
-            <span class="nofacebook" title="North Canterbury Chess cannot be found on Facebook">&nbsp;</span>
-            <span class="notwitter" title="North Canterbury Chess doesn't tweet">&nbsp;</span>
-            <p>This website designed and maintained by:</p>
-            <h5><a href="mailto:scriptuswebdesign@gmail.com?subject=NCC%20Website&amp;body=Dear%20Scott," title="Email Webmaster">Scott Stringer</a></h5>
-            <p>©&nbsp;2014 North Canterbury Chess.&nbsp;&nbsp;No information or images may be reprinted without permission.</p>
-        </footer>
-        <!-- /#footer -->
+        nextMonthButton.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            createCalendar(currentMonth, currentYear, events);
+        });
 
-    </div>
-    <!-- /#pagewrap -->
+        createCalendar(currentMonth, currentYear, events); // Initial render
 
-
+        loadRSSFeed(); // Add this line to load the feed when page loads
+    </script>
 </body>
+
 </html>
