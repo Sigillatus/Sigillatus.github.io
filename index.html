@@ -247,6 +247,7 @@
                         const dayEvents = events.filter(event => event.date === eventDate);
                         if (dayEvents.length > 0) {
                             cell.classList.add('event-day');
+                            cell.title = dayEvents.map(e => e.title).join('\n');
                             cell.addEventListener('click', () => popup.show(eventDate, dayEvents));
                         }
 
