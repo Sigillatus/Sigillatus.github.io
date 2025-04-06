@@ -288,9 +288,8 @@
     </script>
 
 <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
-
-
-
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.google.com/uds/solutions/gfeeds/gfeeds.js"></script>
 <script type="text/javascript">
     //google.load("feeds", "1");
     function initialize() {
@@ -298,13 +297,9 @@
         var feed = new google.feeds.Feed("http://chessexpress.blogspot.com/feeds/posts/default", {
 
             api_key: 'nfjngcaj1cuat1zdder7bo3a8tabenatyyyz9tdj',
-
             count: 6,
-
             order_by: 'pubDate',
-
             order_dir: 'desc'
-
         });
 
         feed.load(function (result) {
