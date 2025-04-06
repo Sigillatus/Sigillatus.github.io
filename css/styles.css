@@ -331,21 +331,22 @@ attrib {
     border-radius: 8px;
     margin-bottom: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    display: block;
     vertical-align: top;
-    width: 46%; /* Adjust as needed */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 15px;
 }
 
 .caption {
-    text-align: left;
-    font-size: 0.875em;  /* Changed from 0.5em to be more proportional */
+    text-align: center;
+    font-size: 0.875em;
     color: #666;
-    margin-bottom: 20px;
-    display: inline-block;
-    vertical-align: bottom;  /* Changed from bottom to middle */
-    width: 48%;
-    margin-left: 2%;
-    padding-top: 0;  /* Removed top padding */
+    margin: 0 auto 20px;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 5px;
 }
 
 /* Sidebar Styles */
