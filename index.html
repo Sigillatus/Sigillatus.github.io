@@ -151,7 +151,7 @@
         // Array of events
         const events = [
             { date: '2025-04-01', title: 'Free play' },
-            { date: '2025-04-15', title: 'AGM / Free play' },
+            { date: '2025-04-15', title: 'AGM / Free play', body:'The club Annual General Meeting to elect officers and change the constiution.' },
             { date: '2025-05-06', title: 'Free play' },
             { date: '2025-05-20', title: 'Club Ladder #3 (of 6)' },
             { date: '2025-06-03', title: 'Free play' },
@@ -189,7 +189,10 @@
                 });
 
                 dateEl.textContent = formattedDate;
-                contentEl.innerHTML = events.map(e => `<p>${e.title}</p>`).join('');
+                contentEl.innerHTML = events.map(e => `
+                    <p>${e.title}</p>
+                    ${e.body ? `<p class="event-body">${e.body}</p>` : ''}
+                `).join('');
 
                 popup.style.display = 'block';
                 backdrop.style.display = 'block';

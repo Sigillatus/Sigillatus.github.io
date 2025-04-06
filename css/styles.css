@@ -324,6 +324,14 @@ attrib {
     margin-bottom: 10px;
 }
 
+.event-body {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding-left: 10px;
+    border-left: 3px solid #e0e0e0;
+}
+
 /* Image Styles */
 .article-image {
     max-width: 100%;
