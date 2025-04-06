@@ -120,33 +120,4 @@ function Show_Quote() {
     }
     invoke_index = false;
 }
-// End
-
-
-
-
-// RSS Feed Implementation
-window.addEventListener('DOMContentLoaded', (event) => {
-    const feedContent = document.getElementById('feedContent');
-    if (feedContent) {
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.chess.com%2Frss%2Fnews')
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'ok') {
-                    const items = data.items.slice(0, 5);
-                    feedContent.innerHTML = items.map(item => `
-                        <div class="news-item">
-                            <a href="${item.link}" target="_blank">${item.title}</a>
-                            <span class="news-date">${new Date(item.pubDate).toLocaleDateString()}</span>
-                        </div>
-                    `).join('');
-                } else {
-                    throw new Error('Feed status not ok');
-                }
-            })
-            .catch(error => {
-                console.error('Error loading feed:', error);
-                feedContent.innerHTML = '<p>Unable to load chess news</p>';
-            });
-    }
-});
+// End of Quote of the Day script

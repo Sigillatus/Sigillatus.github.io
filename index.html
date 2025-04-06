@@ -32,12 +32,12 @@
 
     <main class="main-content">
         <div class="content-area">
-            
-            <h1>Quote of the day</h1>            
+
+            <h1>Quote of the day</h1>
             <div class="quoteOfTheDay">
-            <script type="text/javascript">Show_Quote()</script>
+                <script type="text/javascript">Show_Quote()</script>
             </div>
-            
+
             <h1>Events</h1>
             <p>NCC normally meets on the first and third Tuesday of each month.</p>
 
@@ -127,11 +127,6 @@
                         <li><a href="#article4">2024 Midwinter Blitz - results</a></li>
                     </ul>
                 </li>
-                <li>
-                    <h3>Chess News &amp; Articles</h3>
-                    <div id="feedContent" class="feed"></div>
-                    <script>loadRSSFeed();</script>
-                </li>
             </ul>
         </div>
     </main>
@@ -185,17 +180,17 @@
                 const backdrop = document.querySelector('.event-popup-backdrop');
                 const dateEl = popup.querySelector('.event-popup-date');
                 const contentEl = popup.querySelector('.event-popup-content');
-                
+
                 const formattedDate = new Date(dateStr).toLocaleDateString('en-NZ', {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                 });
-                
+
                 dateEl.textContent = formattedDate;
                 contentEl.innerHTML = events.map(e => `<p>${e.title}</p>`).join('');
-                
+
                 popup.style.display = 'block';
                 backdrop.style.display = 'block';
             },
