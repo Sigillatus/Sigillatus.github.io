@@ -171,26 +171,31 @@ function Show_Quote() {
     };
 
 // Function to load and display RSS feeds
-function loadRSSFeed() {
-    const feedURL = "https://lichess.org/blog.rss";
-    const container = document.getElementById('feedContent');
 
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedURL)}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = '';
-            data.items.slice(0, 5).forEach(item => { // Show only first 5 items
-                const date = new Date(item.pubDate).toLocaleDateString();
-                html += `<div class="feed-item">
+async function loadRSSFeed() {
+    const feedContent = document.getElementById('feedContent');
+    const rssUrl = 'https://www.chess.com/rss/news';
+    const rssToJsonApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+    try {
+        const response = await fetch(rssToJsonApi);
+        const data = await response.json();
+
+        if (data.status === 'ok') {
+            const items = data.items.slice(0, 5); // Show only 5 latest items
+            const newsHtml = items.map(item => `
+                <div class="news-item">
                     <a href="${item.link}" target="_blank">${item.title}</a>
-                    <span class="feed-date">${date}</span>
-                </div>`;
-            });
-            container.innerHTML = html;
-        })
-        .catch(error => {
-            container.innerHTML = 'Unable to load chess news...';
-            console.error('Error loading RSS feed:', error);
-        });
+                    <span class="news-date">${new Date(item.pubDate).toLocaleDateString()}</span>
+                </div>
+            `).join('');
+            
+            feedContent.innerHTML = newsHtml;
+        } else {
+            feedContent.innerHTML = '<p>Unable to load chess news</p>';
+        }
+    } catch (error) {
+        console.error('Error loading RSS feed:', error);
+        feedContent.innerHTML = '<p>Unable to load chess news</p>';
+    }
 }
-
