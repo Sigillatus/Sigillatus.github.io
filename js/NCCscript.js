@@ -125,77 +125,28 @@ function Show_Quote() {
 
 
 
-// Script to load the Google Feeds API and display the latest posts from Chessexpress.blogspot.co.nz
-// This script is loaded from the Google API server and will not work on a local file system
-
-    //google.load("feeds", "1");
-
-    function initialize() {
-        var feed = new google.feeds.Feed("http://chessexpress.blogspot.com/feeds/posts/default", {
-            api_key: 'nfjngcaj1cuat1zdder7bo3a8tabenatyyyz9tdj',
-            count: 6,
-            order_by: 'pubDate',
-            order_dir: 'desc'
-        });
-        feed.load(function (result) {
-            if (!result.error) {
-                var container = document.getElementById("feedcontent");
-                container.innerHTML = "<h4>Chessexpress.blogspot.co.nz</h4>";
-                for (var i = 0; i < result.feed.entries.length; i++) {
-                    var entry = result.feed.entries[i];
-                    var div = document.createElement("div");
-                    //div.appendChild(document.createTextNode(entry.title));
-                    div.innerHTML = '<p><a href="' + entry.link + '" >' + entry.title + '</a> - ' +
-                        text_truncate(entry.content, 120, "&hellip;") +
-                        '<a href="' + entry.link + '" >read more&hellip;</a></p>';
-                    container.appendChild(div);
-                }
-            }
-        });
-    }
-    google.setOnLoadCallback(initialize);
-
-
-    text_truncate = function (str, length, ending) {
-        if (length == null) {
-            length = 100;
-        }
-        if (ending == null) {
-            ending = '...';
-        }
-        if (str.length > length) {
-            return str.substring(0, length - ending.length) + ending;
-        } else {
-            return str;
-        }
-    };
-
-// Function to load and display RSS feeds
-
-async function loadRSSFeed() {
+// RSS Feed Implementation
+window.addEventListener('DOMContentLoaded', (event) => {
     const feedContent = document.getElementById('feedContent');
-    const rssUrl = 'https://www.chess.com/rss/news';
-    const rssToJsonApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-    try {
-        const response = await fetch(rssToJsonApi);
-        const data = await response.json();
-
-        if (data.status === 'ok') {
-            const items = data.items.slice(0, 5); // Show only 5 latest items
-            const newsHtml = items.map(item => `
-                <div class="news-item">
-                    <a href="${item.link}" target="_blank">${item.title}</a>
-                    <span class="news-date">${new Date(item.pubDate).toLocaleDateString()}</span>
-                </div>
-            `).join('');
-            
-            feedContent.innerHTML = newsHtml;
-        } else {
-            feedContent.innerHTML = '<p>Unable to load chess news</p>';
-        }
-    } catch (error) {
-        console.error('Error loading RSS feed:', error);
-        feedContent.innerHTML = '<p>Unable to load chess news</p>';
+    if (feedContent) {
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.chess.com%2Frss%2Fnews')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'ok') {
+                    const items = data.items.slice(0, 5);
+                    feedContent.innerHTML = items.map(item => `
+                        <div class="news-item">
+                            <a href="${item.link}" target="_blank">${item.title}</a>
+                            <span class="news-date">${new Date(item.pubDate).toLocaleDateString()}</span>
+                        </div>
+                    `).join('');
+                } else {
+                    throw new Error('Feed status not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error loading feed:', error);
+                feedContent.innerHTML = '<p>Unable to load chess news</p>';
+            });
     }
-}
+});
