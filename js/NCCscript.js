@@ -38,7 +38,7 @@ function Show_Quote() {
     quotes[8] = "Check. You never know, it might be mate.";
     authors[8] = "Arie Nijman, 2012";
 
-    quotes[9] = "It's a legal move.";
+    quotes[9] = "It's a legal move....";
     authors[9] = "Arie Nijman, 2012";
 
     quotes[10] = "It's over.  Finished.  Kaput.";
@@ -115,8 +115,8 @@ function Show_Quote() {
         index = Math.floor(Math.random() * quotes.length);
 
         //display the quotation
-        document.write("<q>" + quotes[index] + "</q>");
-        document.write("<attrib>" + "~ " + authors[index] + "</attrib>" + "<br />&nbsp;");
+        document.write("<q>" + quotes[index] + "</q><br />&nbsp;");
+        document.write("<attrib>" + "~ " + authors[index] + "</attrib>");
     }
     invoke_index = false;
 }

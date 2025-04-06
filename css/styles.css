@@ -257,6 +257,24 @@ footer {
     border: 2px solid #90ee90;
 }
 
+.quoteOfTheDay {
+    font-style: italic;
+    color: #555;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff;
+}
+
+attrib {
+    display: inline;
+    float: right;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
 /* Event Pop-up Styles */
 .event-popup {
     display: none;
@@ -311,7 +329,7 @@ footer {
 }
 
 /* Image Styles */
-.chess-image {
+.article-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
