@@ -245,6 +245,24 @@ footer {
     background-color: #ffde6b;
 }
 
+.calendar .special-event {
+    background-color: #d4edda;
+    border: 2px solid #28a745;
+}
+
+.calendar .special-event:hover {
+    background-color: #c3e6cb;
+}
+
+.calendar .no-meeting {
+    background-color: #d4edda;
+    border: 2px solid #df2c2c;
+}
+
+.calendar .no-meeting-event:hover {
+    background-color: #c3e6cb;
+}
+
 .calendar .weekend {
     background-color: #f0f0f0;
 }

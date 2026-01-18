@@ -153,11 +153,11 @@
             { date: '2026-01-06', title: 'NO MEETING' },
             { date: '2026-01-20', title: 'Free play', body: 'There is no scheduled competition.' },
             { date: '2026-02-03', title: 'Free play', body: 'There is no scheduled competition.' },
-            { date: '2026-02-17', title: 'Club Ladder #1 (of 6)' },
+            { date: '2026-02-17', title: 'NO MEETING', class: 'no-meeting' },
             { date: '2026-03-03', title: 'Free play', body: 'There is no scheduled competition.' },
             { date: '2026-03-17', title: 'Club Ladder #2 (of 6)' },
             { date: '2026-04-07', title: 'Free play', body: 'There is no scheduled competition.' },
-            { date: '2026-04-21', title: 'AGM / Free play', body: 'The club Annual General Meeting to elect officers and change the constitution.' },
+            { date: '2026-04-21', title: 'AGM / Free play', body: 'The club Annual General Meeting to elect officers and change the constitution.', class: 'special-event' },
             { date: '2026-05-05', title: 'Free play', body: 'There is no scheduled competition.' },
             { date: '2026-05-19', title: 'Club Ladder #3 (of 6)' },
             { date: '2026-06-02', title: 'Free play', body: 'There is no scheduled competition.' },
@@ -253,6 +253,11 @@
                         const dayEvents = events.filter(event => event.date === eventDate);
                         if (dayEvents.length > 0) {
                             cell.classList.add('event-day');
+                            // Add custom class if specified
+                            const customClass = dayEvents.find(event => event.class)?.class;
+                            if (customClass) {
+                                cell.classList.add(customClass);
+                            }
                             cell.title = dayEvents.map(e => e.title).join('\n');
                             cell.addEventListener('click', () => popup.show(eventDate, dayEvents));
                         }
