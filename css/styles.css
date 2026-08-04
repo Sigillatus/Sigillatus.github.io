@@ -182,6 +182,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+     border-radius: 8px;
     background-color: #007bff;
     color: #fff;
 }
@@ -232,6 +233,14 @@ footer {
     padding: 10px;
 }
 
+.calendar thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.calendar thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
 .calendar tbody td {
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -259,7 +268,7 @@ footer {
     border: 2px solid #df2c2c;
 }
 
-.calendar .no-meeting-event:hover {
+.calendar .no-meeting:hover {
     background-color: #c3e6cb;
 }
 
@@ -473,77 +482,6 @@ attrib {
     border-radius: 4px;
 }
 
-/* Feed Styles */
-.feed-item {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #ddd;
-}
-
-.feed-item a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-}
-
-.feed-item a:hover {
-    color: #007bff;
-}
-
-.feed-date {
-    font-size: 0.8em;
-    color: #666;
-}
-
-/* News Feed Styles */
-.news-item {
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.news-item a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    margin-bottom: 0.25rem;
-}
-
-.news-item a:hover {
-    color: #0056b3;
-}
-
-.news-date {
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* Results Table Styles */
-.results-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.results-table th,
-.results-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-.results-table th {
-    background-color: #007bff;
-    color: white;
-}
-
-.results-table tr:nth-child(even) {
-    background-color: #f8f9fa;
-}
-
-.results-table tr:hover {
-    background-color: #f0f0f0;
-}
 
 /* Ratings Table Styles */
 .content-area table th {
@@ -636,10 +574,10 @@ attrib {
         padding: 15px;
         flex-direction: column;
     }
-     .content h1{
+     .main-content h1{
         font-size: 24px;
     }
-    .content p{
+    .main-content p{
         font-size: 16px;
     }
     .calendar-container {
